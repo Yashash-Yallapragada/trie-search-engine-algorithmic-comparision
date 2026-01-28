@@ -1,0 +1,434 @@
+{
+  "results": [
+    {
+      "algorithm": "Naive",
+      "dataset_size": 1000,
+      "prefix": "app",
+      "avg_time_ms": 0.026748333311843453,
+      "min_time_ms": 0.021533999642997514,
+      "max_time_ms": 0.045372999920800794,
+      "std_dev_ms": 0.007500288089929161,
+      "num_results": 0,
+      "memory_nodes": 186,
+      "memory_info": "List storage"
+    },
+    {
+      "algorithm": "Standard Trie",
+      "dataset_size": 1000,
+      "prefix": "app",
+      "avg_time_ms": 0.0006673332791251596,
+      "min_time_ms": 0.0004399998942972161,
+      "max_time_ms": 0.004189999344816897,
+      "std_dev_ms": 0.0007129851862356819,
+      "num_results": 0,
+      "memory_nodes": 540,
+      "memory_info": "540 nodes"
+    },
+    {
+      "algorithm": "Compressed Trie",
+      "dataset_size": 1000,
+      "prefix": "app",
+      "avg_time_ms": 0.0022526333244362227,
+      "min_time_ms": 0.001600000359758269,
+      "max_time_ms": 0.008386999979848042,
+      "std_dev_ms": 0.001314766711109963,
+      "num_results": 0,
+      "memory_nodes": 249,
+      "memory_info": "249 nodes (69.9% saved)"
+    },
+    {
+      "algorithm": "TST",
+      "dataset_size": 1000,
+      "prefix": "app",
+      "avg_time_ms": 0.002531166774133453,
+      "min_time_ms": 0.0017000002117129043,
+      "max_time_ms": 0.008058999810600653,
+      "std_dev_ms": 0.0010945063199007618,
+      "num_results": 0,
+      "memory_nodes": 539,
+      "memory_info": "539 nodes (88.5% mem)"
+    },
+    {
+      "algorithm": "Naive",
+      "dataset_size": 1000,
+      "prefix": "pro",
+      "avg_time_ms": 0.034408133342367364,
+      "min_time_ms": 0.02191600015066797,
+      "max_time_ms": 0.181927999619802,
+      "std_dev_ms": 0.03057323268886663,
+      "num_results": 1,
+      "memory_nodes": 186,
+      "memory_info": "List storage"
+    },
+    {
+      "algorithm": "Standard Trie",
+      "dataset_size": 1000,
+      "prefix": "pro",
+      "avg_time_ms": 0.010339833261241438,
+      "min_time_ms": 0.005842000064149033,
+      "max_time_ms": 0.036624000131268986,
+      "std_dev_ms": 0.006668835078835753,
+      "num_results": 1,
+      "memory_nodes": 540,
+      "memory_info": "540 nodes"
+    },
+    {
+      "algorithm": "Compressed Trie",
+      "dataset_size": 1000,
+      "prefix": "pro",
+      "avg_time_ms": 0.010673633217569053,
+      "min_time_ms": 0.00686899966240162,
+      "max_time_ms": 0.026732999685918912,
+      "std_dev_ms": 0.004358944145110485,
+      "num_results": 1,
+      "memory_nodes": 249,
+      "memory_info": "249 nodes (69.9% saved)"
+    },
+    {
+      "algorithm": "TST",
+      "dataset_size": 1000,
+      "prefix": "pro",
+      "avg_time_ms": 0.011252800019671364,
+      "min_time_ms": 0.007079000170051586,
+      "max_time_ms": 0.03882100008922862,
+      "std_dev_ms": 0.0072718256498370245,
+      "num_results": 1,
+      "memory_nodes": 539,
+      "memory_info": "539 nodes (88.5% mem)"
+    },
+    {
+      "algorithm": "Naive",
+      "dataset_size": 1000,
+      "prefix": "com",
+      "avg_time_ms": 0.026632166645867983,
+      "min_time_ms": 0.021642999854520895,
+      "max_time_ms": 0.07840899979782989,
+      "std_dev_ms": 0.011778465986598924,
+      "num_results": 1,
+      "memory_nodes": 186,
+      "memory_info": "List storage"
+    },
+    {
+      "algorithm": "Standard Trie",
+      "dataset_size": 1000,
+      "prefix": "com",
+      "avg_time_ms": 0.007163799909903901,
+      "min_time_ms": 0.005699999746866524,
+      "max_time_ms": 0.017155999557871837,
+      "std_dev_ms": 0.002543961220488642,
+      "num_results": 1,
+      "memory_nodes": 540,
+      "memory_info": "540 nodes"
+    },
+    {
+      "algorithm": "Compressed Trie",
+      "dataset_size": 1000,
+      "prefix": "com",
+      "avg_time_ms": 0.011517199982336024,
+      "min_time_ms": 0.007355999514402356,
+      "max_time_ms": 0.02982399928441737,
+      "std_dev_ms": 0.0049172804482599496,
+      "num_results": 1,
+      "memory_nodes": 249,
+      "memory_info": "249 nodes (69.9% saved)"
+    },
+    {
+      "algorithm": "TST",
+      "dataset_size": 1000,
+      "prefix": "com",
+      "avg_time_ms": 0.009358066654385766,
+      "min_time_ms": 0.0069899997470201924,
+      "max_time_ms": 0.01621999945200514,
+      "std_dev_ms": 0.002910351401979059,
+      "num_results": 1,
+      "memory_nodes": 539,
+      "memory_info": "539 nodes (88.5% mem)"
+    },
+    {
+      "algorithm": "Naive",
+      "dataset_size": 1000,
+      "prefix": "test",
+      "avg_time_ms": 0.025175266515968058,
+      "min_time_ms": 0.021730999833380338,
+      "max_time_ms": 0.06751399996574037,
+      "std_dev_ms": 0.009203951882273673,
+      "num_results": 0,
+      "memory_nodes": 186,
+      "memory_info": "List storage"
+    },
+    {
+      "algorithm": "Standard Trie",
+      "dataset_size": 1000,
+      "prefix": "test",
+      "avg_time_ms": 0.000643466622326135,
+      "min_time_ms": 0.0005229994712863117,
+      "max_time_ms": 0.0028839995138696395,
+      "std_dev_ms": 0.0004280043892812143,
+      "num_results": 0,
+      "memory_nodes": 540,
+      "memory_info": "540 nodes"
+    },
+    {
+      "algorithm": "Compressed Trie",
+      "dataset_size": 1000,
+      "prefix": "test",
+      "avg_time_ms": 0.0030189000729781887,
+      "min_time_ms": 0.0018070004443870857,
+      "max_time_ms": 0.007215000550786499,
+      "std_dev_ms": 0.0009788604079548249,
+      "num_results": 0,
+      "memory_nodes": 249,
+      "memory_info": "249 nodes (69.9% saved)"
+    },
+    {
+      "algorithm": "TST",
+      "dataset_size": 1000,
+      "prefix": "test",
+      "avg_time_ms": 0.001635033428707781,
+      "min_time_ms": 0.0009109999155043624,
+      "max_time_ms": 0.0038480002331198193,
+      "std_dev_ms": 0.0005838932203820551,
+      "num_results": 0,
+      "memory_nodes": 539,
+      "memory_info": "539 nodes (88.5% mem)"
+    },
+    {
+      "algorithm": "Naive",
+      "dataset_size": 10000,
+      "prefix": "app",
+      "avg_time_ms": 3.7712520333116117,
+      "min_time_ms": 2.2378300000127638,
+      "max_time_ms": 4.173004999756813,
+      "std_dev_ms": 0.38191765813465073,
+      "num_results": 10,
+      "memory_nodes": 9996,
+      "memory_info": "List storage"
+    },
+    {
+      "algorithm": "Standard Trie",
+      "dataset_size": 10000,
+      "prefix": "app",
+      "avg_time_ms": 1.3820275333576622,
+      "min_time_ms": 1.277655999729177,
+      "max_time_ms": 1.580377999744087,
+      "std_dev_ms": 0.09015110670529895,
+      "num_results": 10,
+      "memory_nodes": 33072,
+      "memory_info": "33072 nodes"
+    },
+    {
+      "algorithm": "Compressed Trie",
+      "dataset_size": 10000,
+      "prefix": "app",
+      "avg_time_ms": 1.361202333282563,
+      "min_time_ms": 1.2870219998148968,
+      "max_time_ms": 1.6664290005792282,
+      "std_dev_ms": 0.09172188466407834,
+      "num_results": 10,
+      "memory_nodes": 13569,
+      "memory_info": "13569 nodes (84.4% saved)"
+    },
+    {
+      "algorithm": "TST",
+      "dataset_size": 10000,
+      "prefix": "app",
+      "avg_time_ms": 1.4795645333530654,
+      "min_time_ms": 1.4140490002318984,
+      "max_time_ms": 1.7452989995945245,
+      "std_dev_ms": 0.08272576677399884,
+      "num_results": 10,
+      "memory_nodes": 33071,
+      "memory_info": "33071 nodes (88.5% mem)"
+    },
+    {
+      "algorithm": "Naive",
+      "dataset_size": 10000,
+      "prefix": "pro",
+      "avg_time_ms": 3.72567340009482,
+      "min_time_ms": 3.5178440002709976,
+      "max_time_ms": 4.205176000141364,
+      "std_dev_ms": 0.1886732581042574,
+      "num_results": 10,
+      "memory_nodes": 9996,
+      "memory_info": "List storage"
+    },
+    {
+      "algorithm": "Standard Trie",
+      "dataset_size": 10000,
+      "prefix": "pro",
+      "avg_time_ms": 1.3522977000017515,
+      "min_time_ms": 1.284903999476228,
+      "max_time_ms": 1.5728549997220398,
+      "std_dev_ms": 0.07648197925996246,
+      "num_results": 10,
+      "memory_nodes": 33072,
+      "memory_info": "33072 nodes"
+    },
+    {
+      "algorithm": "Compressed Trie",
+      "dataset_size": 10000,
+      "prefix": "pro",
+      "avg_time_ms": 1.389417933326816,
+      "min_time_ms": 1.3012700001127087,
+      "max_time_ms": 1.7580799994902918,
+      "std_dev_ms": 0.09002256824617347,
+      "num_results": 10,
+      "memory_nodes": 13569,
+      "memory_info": "13569 nodes (84.4% saved)"
+    },
+    {
+      "algorithm": "TST",
+      "dataset_size": 10000,
+      "prefix": "pro",
+      "avg_time_ms": 1.3688434999797512,
+      "min_time_ms": 1.3042379996477393,
+      "max_time_ms": 1.8798840001181816,
+      "std_dev_ms": 0.11511899599072581,
+      "num_results": 10,
+      "memory_nodes": 33071,
+      "memory_info": "33071 nodes (88.5% mem)"
+    },
+    {
+      "algorithm": "Naive",
+      "dataset_size": 10000,
+      "prefix": "com",
+      "avg_time_ms": 3.8685747665113013,
+      "min_time_ms": 3.698434000398265,
+      "max_time_ms": 4.296453999813821,
+      "std_dev_ms": 0.1349053049767367,
+      "num_results": 10,
+      "memory_nodes": 9996,
+      "memory_info": "List storage"
+    },
+    {
+      "algorithm": "Standard Trie",
+      "dataset_size": 10000,
+      "prefix": "com",
+      "avg_time_ms": 1.4183472999926987,
+      "min_time_ms": 1.3097049995849375,
+      "max_time_ms": 1.9730120002350304,
+      "std_dev_ms": 0.13456206855061473,
+      "num_results": 10,
+      "memory_nodes": 33072,
+      "memory_info": "33072 nodes"
+    },
+    {
+      "algorithm": "Compressed Trie",
+      "dataset_size": 10000,
+      "prefix": "com",
+      "avg_time_ms": 1.4459651666887414,
+      "min_time_ms": 1.2946039996677428,
+      "max_time_ms": 2.2075150000091526,
+      "std_dev_ms": 0.17894810856241047,
+      "num_results": 10,
+      "memory_nodes": 13569,
+      "memory_info": "13569 nodes (84.4% saved)"
+    },
+    {
+      "algorithm": "TST",
+      "dataset_size": 10000,
+      "prefix": "com",
+      "avg_time_ms": 1.39275709998401,
+      "min_time_ms": 1.2851920000684913,
+      "max_time_ms": 1.8845419999706792,
+      "std_dev_ms": 0.1316932794655118,
+      "num_results": 10,
+      "memory_nodes": 33071,
+      "memory_info": "33071 nodes (88.5% mem)"
+    },
+    {
+      "algorithm": "Naive",
+      "dataset_size": 10000,
+      "prefix": "test",
+      "avg_time_ms": 3.8036748665945197,
+      "min_time_ms": 3.6382249991220306,
+      "max_time_ms": 4.224532000080217,
+      "std_dev_ms": 0.11685896985028395,
+      "num_results": 0,
+      "memory_nodes": 9996,
+      "memory_info": "List storage"
+    },
+    {
+      "algorithm": "Standard Trie",
+      "dataset_size": 10000,
+      "prefix": "test",
+      "avg_time_ms": 0.000935066600504797,
+      "min_time_ms": 0.0006029995347489603,
+      "max_time_ms": 0.005482999767991714,
+      "std_dev_ms": 0.0008725989117599971,
+      "num_results": 0,
+      "memory_nodes": 33072,
+      "memory_info": "33072 nodes"
+    },
+    {
+      "algorithm": "Compressed Trie",
+      "dataset_size": 10000,
+      "prefix": "test",
+      "avg_time_ms": 0.0016492333391700715,
+      "min_time_ms": 0.0009839995982474647,
+      "max_time_ms": 0.00701200042385608,
+      "std_dev_ms": 0.0010840315568368664,
+      "num_results": 0,
+      "memory_nodes": 13569,
+      "memory_info": "13569 nodes (84.4% saved)"
+    },
+    {
+      "algorithm": "TST",
+      "dataset_size": 10000,
+      "prefix": "test",
+      "avg_time_ms": 0.004267533434661648,
+      "min_time_ms": 0.002132999725290574,
+      "max_time_ms": 0.018632000319485087,
+      "std_dev_ms": 0.0033916805164741905,
+      "num_results": 0,
+      "memory_nodes": 33071,
+      "memory_info": "33071 nodes (88.5% mem)"
+    }
+  ],
+  "summary": {
+    "1000": {
+      "Naive": {
+        "avg_time_ms": 0.028240974954011715,
+        "memory_nodes": 186,
+        "memory_info": "List storage"
+      },
+      "Standard Trie": {
+        "avg_time_ms": 0.004703608268149158,
+        "memory_nodes": 540,
+        "memory_info": "540 nodes"
+      },
+      "Compressed Trie": {
+        "avg_time_ms": 0.006865591649329872,
+        "memory_nodes": 249,
+        "memory_info": "249 nodes (69.9% saved)"
+      },
+      "TST": {
+        "avg_time_ms": 0.006194266719224591,
+        "memory_nodes": 539,
+        "memory_info": "539 nodes (88.5% mem)"
+      }
+    },
+    "10000": {
+      "Naive": {
+        "avg_time_ms": 3.792293766628063,
+        "memory_nodes": 9996,
+        "memory_info": "List storage"
+      },
+      "Standard Trie": {
+        "avg_time_ms": 1.0384018999881544,
+        "memory_nodes": 33072,
+        "memory_info": "33072 nodes"
+      },
+      "Compressed Trie": {
+        "avg_time_ms": 1.0495586666593226,
+        "memory_nodes": 13569,
+        "memory_info": "13569 nodes (84.4% saved)"
+      },
+      "TST": {
+        "avg_time_ms": 1.061358166687872,
+        "memory_nodes": 33071,
+        "memory_info": "33071 nodes (88.5% mem)"
+      }
+    }
+  }
+}
