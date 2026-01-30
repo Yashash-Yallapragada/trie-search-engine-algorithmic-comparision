@@ -226,13 +226,17 @@ def load_dataset(dataset_size: str):
     return False
 
 
-@st.cache_data
 def load_benchmark_results():
-    """Load benchmark results from JSON file"""
+    """Load benchmark results from JSON file - NO CACHE"""
     try:
         with open('results/benchmark_results.json', 'r') as f:
-            return json.load(f)
+            data = json.load(f)
+            return data
     except FileNotFoundError:
+        st.error("❌ Benchmark file not found at: results/benchmark_results.json")
+        return None
+    except Exception as e:
+        st.error(f"❌ Error loading benchmark: {e}")
         return None
 
 
@@ -469,6 +473,19 @@ with st.sidebar:
     💾 **TST** - O(p+log n)
     89% memory savings
     """)
+    
+    st.markdown("---")
+    
+    # Debug section - show loaded benchmark sizes
+    if st.checkbox("🔧 Show Debug Info"):
+        benchmark_data = load_benchmark_results()
+        if benchmark_data:
+            st.write("**Loaded benchmark sizes:**")
+            summary = benchmark_data.get('summary', {})
+            for size_str in sorted(summary.keys(), key=lambda x: int(x)):
+                st.write(f"- {int(size_str):,} words")
+        else:
+            st.write("No benchmark data loaded")
 
 # ============================================================================
 # MAIN APP
@@ -581,12 +598,19 @@ with tab1:
                         )
                     with col_b:
                         if 'Compressed Trie' in data:
+                            memory_info = data['Compressed Trie']['memory_info']
+                            if '(' in memory_info:
+                                space_saved = memory_info.split('(')[1].split(')')[0]
+                            else:
+                                space_saved = "85%"
                             st.metric(
                                 "Space Saved",
-                                data['Compressed Trie']['memory_info'].split('(')[1].split(')')[0] if '(' in data['Compressed Trie']['memory_info'] else "85%"
+                                space_saved
                             )
                 
                 st.markdown("---")
+        else:
+            st.warning("No benchmark data available. Run benchmarks first!")
         
         st.markdown("""
         ### 🎓 Real-World Applications
@@ -938,14 +962,22 @@ with tab4:
                 with col2:
                     if 'Compressed Trie' in data:
                         speedup = naive_time / data['Compressed Trie']['avg_time_ms']
-                        st.metric("Compressed Trie", f"{speedup:.2f}x", 
-                                f"faster + {data['Compressed Trie']['memory_info'].split('(')[1].split(')')[0] if '(' in data['Compressed Trie']['memory_info'] else '70% saved'}")
+                        memory_info = data['Compressed Trie']['memory_info']
+                        if '(' in memory_info:
+                            space_info = memory_info.split('(')[1].split(')')[0]
+                        else:
+                            space_info = '70% saved'
+                        st.metric("Compressed Trie", f"{speedup:.2f}x", f"faster + {space_info}")
                 
                 with col3:
                     if 'TST' in data:
                         speedup = naive_time / data['TST']['avg_time_ms']
-                        st.metric("TST", f"{speedup:.2f}x", 
-                                f"faster + {data['TST']['memory_info'].split('(')[1].split(')')[0] if '(' in data['TST']['memory_info'] else '89% saved'}")
+                        memory_info = data['TST']['memory_info']
+                        if '(' in memory_info:
+                            space_info = memory_info.split('(')[1].split(')')[0]
+                        else:
+                            space_info = '89% saved'
+                        st.metric("TST", f"{speedup:.2f}x", f"faster + {space_info}")
         
         # Overall performance charts
         st.markdown("---")
