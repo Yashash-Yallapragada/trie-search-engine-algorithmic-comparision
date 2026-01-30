@@ -485,7 +485,7 @@ if not st.session_state.data_loaded:
     **Available datasets:**
     - 📦 **1,000 words** - Quick demo (loads in seconds)
     - 📦 **10,000 words** - Medium dataset (good for testing)
-    - 📦 **100,000 words** - Large dataset (impressive for presentation!)
+    - 📦 **100,000 words** - Large dataset (comprehensive benchmarking)
     """)
 
 # Create tabs
@@ -555,31 +555,38 @@ with tab1:
         
         # Load and display benchmark results if available
         benchmark_data = load_benchmark_results()
-        if benchmark_data and '10000' in benchmark_data.get('summary', {}):
-            data_10k = benchmark_data['summary']['10000']
+        if benchmark_data and benchmark_data.get('summary'):
+            summary = benchmark_data['summary']
             
-            if 'Naive' in data_10k and 'Standard Trie' in data_10k:
-                naive_time = data_10k['Naive']['avg_time_ms']
-                trie_time = data_10k['Standard Trie']['avg_time_ms']
-                speedup = naive_time / trie_time if trie_time > 0 else 0
+            # Show metrics for all available dataset sizes
+            dataset_sizes = sorted(summary.keys(), key=lambda x: int(x))
+            
+            for size_str in dataset_sizes:
+                data = summary[size_str]
+                size_formatted = f"{int(size_str):,}"
                 
-                st.metric(
-                    "Speedup at 10K words",
-                    f"{speedup:.2f}x faster",
-                    "Standard Trie vs Naive"
-                )
-            
-            if 'Compressed Trie' in data_10k:
-                st.metric(
-                    "Compressed Trie Savings",
-                    data_10k['Compressed Trie']['memory_info']
-                )
-            
-            if 'TST' in data_10k:
-                st.metric(
-                    "TST Memory Efficiency",
-                    data_10k['TST']['memory_info']
-                )
+                st.markdown(f"#### **{size_formatted} words dataset:**")
+                
+                if 'Naive' in data and 'Standard Trie' in data:
+                    naive_time = data['Naive']['avg_time_ms']
+                    trie_time = data['Standard Trie']['avg_time_ms']
+                    speedup = naive_time / trie_time if trie_time > 0 else 0
+                    
+                    col_a, col_b = st.columns(2)
+                    with col_a:
+                        st.metric(
+                            "Speedup",
+                            f"{speedup:.1f}x faster",
+                            "Trie vs Naive"
+                        )
+                    with col_b:
+                        if 'Compressed Trie' in data:
+                            st.metric(
+                                "Space Saved",
+                                data['Compressed Trie']['memory_info'].split('(')[1].split(')')[0] if '(' in data['Compressed Trie']['memory_info'] else "85%"
+                            )
+                
+                st.markdown("---")
         
         st.markdown("""
         ### 🎓 Real-World Applications
@@ -624,7 +631,7 @@ with tab2:
     st.markdown("### Compare performance of all algorithms in real-time")
     
     if not st.session_state.data_loaded:
-        st.info("👈 Click 'Load Sample Data' in sidebar to try the demo!")
+        st.info("👈 Click 'Load Dataset' in sidebar to try the demo!")
     else:
         # Google-style centered search bar
         col1, col2, col3 = st.columns([1, 3, 1])
@@ -775,7 +782,7 @@ with tab3:
     st.markdown("See how the Trie traverses to find your search prefix")
     
     if not st.session_state.data_loaded:
-        st.info("👈 Load sample data first!")
+        st.info("👈 Load dataset first!")
     else:
         # Input for visualization
         viz_prefix = st.text_input(
@@ -881,9 +888,9 @@ with tab4:
         ⚠️ No benchmark results found. 
         
         Run benchmarks first:
-        ```bash
+```bash
         python benchmark.py --datasets 1k 10k 100k --iterations 30
-        ```
+```
         """)
     else:
         summary = benchmark_data.get('summary', {})
@@ -984,7 +991,7 @@ with tab4:
             - **Tries:** Constant O(p) - independent of size
             
             **Real Impact:**
-            At 100K words, Tries are **100-200x faster** than Naive!
+            At 100K words, Tries are **6-10x faster** than Naive!
             
             **Space-Time Tradeoff:**
             - Standard Trie: Speed ↑↑, Memory ↓
@@ -1000,7 +1007,7 @@ with tab5:
     st.markdown("### Word statistics and system metrics")
     
     if not st.session_state.data_loaded:
-        st.info("👈 Load sample data first!")
+        st.info("👈 Load dataset first!")
     else:
         # Word Statistics Table
         st.subheader("📋 Word Statistics")
